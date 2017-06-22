@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100%;
+  font-family: $font-primary;
+}
+
+a {
+  text-decoration: none;
+  transition: color $transition-duration $transition-function;
+
+  // &:hover {}
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
