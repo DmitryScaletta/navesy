@@ -52,7 +52,7 @@
 
     position: relative;
     height: 100vh;
-    min-height: 700px;
+    min-height: 800px;
     max-height: 1080px;
     z-index: 1;
   }
@@ -114,12 +114,19 @@
   &__bottom {
     @extend %row;
 
+    display: flex;
+    align-items: center;
+    min-height: 270px;
     margin-top: 165px;
     height: calc(100vh - 530px);
   }
 
   &__form {
     @extend %col-4;
+
+    position: relative;
+    top: -87px;
+    left: 0;
   }
 
   &__caption {
