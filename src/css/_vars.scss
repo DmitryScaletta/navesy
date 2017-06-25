@@ -1,37 +1,26 @@
-$screen-sm:             576px;
-$screen-md:             768px;
-$screen-lg:             992px;
-$screen-xl:             1200px;
+$screen-xl:              1200px;
 
-$container-max-sm:      540px;
-$container-max-md:      720px;
-$container-max-lg:      960px;
-$container-max-xl:      1170px;
+$container-max-xl:       1170px;
 
-$color-primary:         #df3d7b;
-$color-secondary:       #262626;
+$color-primary:          #ffe400;
+$color-secondary:        #248bba; // #1e99d5, #1e99d5, #009fe3
+$color-text-dark:        #606060;
+$color-text-light:       #fff;
 
-$transition-duration:   0.2s;
-$transition-function:   linear;
+$transition-duration:    0.2s;
+$transition-function:    linear;
 
-$font-primary:          sans-serif;
+$font-primary:           Casper, Arial, sans-serif;
 
-$global-line-height:    1.37;
-$navbar-height:         60px;
+$global-line-height:     1.5;
 
 // grid
 $grid-gutter-width-base: 30px;
 
 $grid-breakpoints: (
-  sm: $screen-sm,
-  md: $screen-md,
-  lg: $screen-lg,
   xl: $screen-xl,
 );
 
-$container-max-widths: (
-  sm: $container-max-sm,
-  md: $container-max-md,
-  lg: $container-max-lg,
+$grid-max-widths: (
   xl: $container-max-xl,
 );

@@ -10,16 +10,131 @@
 body {
   min-height: 100%;
   font-family: $font-primary;
+  font-size: 16px;
+  line-height: $global-line-height;
+  color: $color-text-dark;
 }
 
 a {
+  color: $color-text-light;
   text-decoration: none;
   transition: color $transition-duration $transition-function;
 
-  // &:hover {}
+  &:hover {
+    color: $color-primary;
+  }
 }
 
 img {
   max-width: 100%;
   max-height: 100%;
+}
+
+%site-container {
+  @extend %clearfix;
+
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: floor($grid-gutter-width / 2);
+  padding-right: ceil($grid-gutter-width / 2);
+  width: $container-max-xl;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.button {
+  display: inline-block;
+  transition:
+    color            $transition-duration $transition-function,
+    border-color     $transition-duration $transition-function,
+    background-color $transition-duration $transition-function;
+
+  &--primary {
+    padding: 19px 35px;
+    background: $color-primary;
+    color: $color-text-dark;
+    font-size: 22px;
+    line-height: 1;
+    box-shadow: 0 2px 13px rgba(#110c0c, 0.3);
+    border-radius: 5px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $color-text-dark;
+      background: darken($color-primary, 3%);
+    }
+  }
+
+  &--secondary {
+    padding: 6px 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    color: $color-text-light;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $color-primary;
+      border-color: $color-primary;
+    }
+
+    &.button--dark {
+      color: $color-secondary;
+      border-color: $color-secondary;
+
+      &:hover {
+        color: lighten($color-secondary, 25%);
+        border-color: lighten($color-secondary, 25%);
+      }
+    }
+  }
+}
+
+.caption {
+  position: relative;
+  padding: 30px 20px 30px 50px;
+  background: rgba(#000, 0.5);
+  color: $color-text-light;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 60px;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: $color-primary;
+    width: 5px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 1px;
+  }
+
+  &--header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: none;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 1.33;
+  }
+
+  &__title {
+    margin: 0 0 15px;
+    color: $color-primary;
+    font-size: 36px;
+    text-transform: uppercase;
+  }
+
+  &__text-big {
+    font-size: 36px;
+  }
+
+  &__text-bigger {
+    font-size: 48px;
+  }
 }
