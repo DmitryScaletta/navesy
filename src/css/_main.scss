@@ -210,6 +210,8 @@
 
     &--user::after,
     &--phone::after {
+      @extend .icon;
+
       position: absolute;
       padding: 13px 0;
       top: 0;
@@ -220,11 +222,11 @@
     }
 
     &--user::after {
-      content: "🙍‍";
+      content: $icon-user;
     }
 
     &--phone::after {
-      content: "📱";
+      content: $icon-mobile;
     }
   }
 
@@ -916,7 +918,9 @@
     cursor: pointer;
 
     &::before {
-      content: "↑";
+      @extend .icon;
+
+      content: $icon-up-open;
     }
   }
 
@@ -944,7 +948,9 @@
     }
 
     &::before {
-      content: "📱";
+      @extend .icon;
+
+      content: $icon-mobile-alt;
     }
 
     @media (min-width: 1580px) {

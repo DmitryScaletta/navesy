@@ -71,12 +71,16 @@ img {
     }
 
     &.button--icon-paper::before {
-      content: "📰";
+      @extend .icon;
+
+      content: $icon-newspaper;
       padding-right: 6px;
     }
 
     &.button--icon-warning::before {
-      content: "⚠️";
+      @extend .icon;
+
+      content: $icon-alert;
       padding-right: 6px;
     }
   }
@@ -105,7 +109,9 @@ img {
     }
 
     &.button--icon-phone::before {
-      content: "📱";
+      @extend .icon;
+
+      content: $icon-mobile;
       padding-right: 6px;
     }
   }
