@@ -707,12 +707,17 @@
 
 .section-footer {
   position: relative;
-  height: 223px;
+  padding: 50px 0 27px;
   max-height: 223px;
   border-top: 5px solid $color-secondary;
+  min-width: $container-max-xl;
   background:
     url("../img/section-footer-mask.png") center no-repeat,
     #353535;
+
+  &__inner {
+    @extend %site-container;
+  }
 
   &__top-link {
     position: absolute;
