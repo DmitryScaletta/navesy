@@ -898,6 +898,34 @@
     cursor: pointer;
   }
 
+  &__circle-link {
+    display: none;
+    position: absolute;
+    margin-right: -770px;
+    top: -53px;
+    right: 50%;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 60px;
+    border-radius: 50%;
+    background: $color-primary;
+    color: #606060;
+    box-shadow: 0 2px 13px rgba(#110c0c, 0.3);
+    cursor: pointer;
+    transition: background-color $transition-duration $transition-function;
+
+    &:hover {
+      background: darken($color-primary, 3%);
+      color: #606060;
+    }
+
+    @media (min-width: 1580px) {
+      display: block;
+    }
+  }
+
   &__content {
     @extend %row;
   }
