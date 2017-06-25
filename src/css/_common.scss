@@ -70,9 +70,15 @@ img {
       background: darken($color-primary, 3%);
     }
 
-    // &.button--icon-paper {}
+    &.button--icon-paper::before {
+      content: "📰";
+      padding-right: 6px;
+    }
 
-    // &.button--icon-warning {}
+    &.button--icon-warning::before {
+      content: "⚠️";
+      padding-right: 6px;
+    }
   }
 
   &--secondary {
@@ -98,7 +104,10 @@ img {
       }
     }
 
-    // &.button--icon-phone {}
+    &.button--icon-phone::before {
+      content: "📱";
+      padding-right: 6px;
+    }
   }
 
   &--no-shadow {
