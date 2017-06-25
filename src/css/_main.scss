@@ -458,13 +458,178 @@
 
 .section-portfolio {
   max-height: 800px;
-  height: 800px;
+  overflow: hidden;
   background:
     url("../img/section-portfolio-mask.png") top center no-repeat,
     mix($color-secondary, #0ce4fe);
   background:
     url("../img/section-portfolio-mask.png") top center no-repeat,
     linear-gradient(to right, $color-secondary, #0ce4fe);
+}
+
+.slider-portfolio {
+  &__list {
+    @extend %row;
+
+    position: relative;
+  }
+
+  &__item {
+    display: none;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(#000, 0.3);
+    }
+
+    &.active {
+      @extend %col-6;
+      @extend %col-push-3;
+
+      display: block;
+
+      &::after {
+        background: none;
+      }
+    }
+
+    &.prev,
+    &.next {
+      display: block;
+      position: absolute;
+      top: 45px;
+      height: 350px;
+    }
+
+    &.prev {
+      left: -200px;
+    }
+
+    &.next {
+      right: -200px;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  &__prev,
+  &__next {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 45px;
+    height: 350px;
+    width: 466px;
+    cursor: pointer;
+
+    &:hover::before,
+    &:hover::after {
+      background: $color-primary;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 3px;
+      height: 45px;
+      background: #fff;
+      transition: background-color $transition-duration $transition-function;
+    }
+
+    &::before {
+      top: 140px;
+    }
+
+    &::after {
+      top: 183px;
+    }
+  }
+
+  &__prev {
+    left: -200px;
+
+    &::before {
+      right: 25px;
+      transform: rotate(15deg);
+    }
+
+    &::after {
+      right: 25px;
+      transform: rotate(-15deg);
+    }
+  }
+
+  &__next {
+    right: -200px;
+
+    &::before {
+      left: 25px;
+      transform: rotate(-15deg);
+    }
+
+    &::after {
+      left: 25px;
+      transform: rotate(15deg);
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    padding: 80px 0 40px;
+    font-size: 0;
+    text-align: center;
+  }
+
+  &__thumb {
+    position: relative;
+    display: block;
+    margin: 0 14px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    float: left;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 3px solid transparent;
+      background: rgba(#000, 0.3);
+      transition:
+        background-color $transition-duration $transition-function,
+        border-color     $transition-duration $transition-function;
+    }
+
+    &:hover::after,
+    &.active::after {
+      border-color: #fff;
+      background: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
 }
 
 .section-building {
