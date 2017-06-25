@@ -222,20 +222,14 @@
     &:focus {
       border-color: #20b9dd;
     }
+
+    // &--user {}
+
+    // &--phone {}
   }
 
   &__button {
-    display: block;
-    padding: 17px 10px;
     width: 100%;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    font-size: 22px;
-    text-transform: uppercase;
-    color: $color-text-dark;
-    background: $color-primary;
-    cursor: pointer;
   }
 }
 
@@ -740,8 +734,13 @@
   &__item {
     @extend %col-4;
 
+    display: none;
     padding-top: 68px;
     padding-bottom: 50px;
+
+    &.active {
+      display: block;
+    }
   }
 
   &__controls {
@@ -958,5 +957,48 @@
     height: 14px;
     width: 73px;
     background: url("../img/logo-art6.svg") center no-repeat;
+  }
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  padding: 40px 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(#000, 0.4);
+
+  &.js-popup-visible {
+    // display: block;
+  }
+
+  &__form {
+    margin: 0 auto;
+    width: 360px;
+  }
+
+  &__close {
+    position: absolute;
+    z-index: 10;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color $transition-duration $transition-function;
+
+    &:hover {
+      color: $color-secondary;
+    }
+
+    &::after {
+      content: "✖";
+    }
   }
 }

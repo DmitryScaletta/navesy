@@ -8,6 +8,7 @@
 }
 
 body {
+  position: relative;
   min-height: 100%;
   font-family: $font-primary;
   font-size: 16px;
@@ -46,6 +47,9 @@ img {
 
 .button {
   display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
   transition:
     color            $transition-duration $transition-function,
     border-color     $transition-duration $transition-function,
@@ -65,6 +69,10 @@ img {
       color: $color-text-dark;
       background: darken($color-primary, 3%);
     }
+
+    // &.button--icon-paper {}
+
+    // &.button--icon-warning {}
   }
 
   &--secondary {
@@ -89,6 +97,12 @@ img {
         border-color: lighten($color-secondary, 25%);
       }
     }
+
+    // &.button--icon-phone {}
+  }
+
+  &--no-shadow {
+    box-shadow: none;
   }
 }
 
