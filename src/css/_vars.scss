@@ -3,7 +3,9 @@ $screen-xl:              1200px;
 $container-max-xl:       1170px;
 
 $color-primary:          #ffe400;
+$color-primary-dark:     darken($color-primary, 3%);
 $color-secondary:        #248bba; // #1e99d5, #1e99d5, #009fe3
+$color-secondary-light:  #0ce4fe;
 $color-text-dark:        #606060;
 $color-text-light:       #fff;
 

@@ -67,7 +67,7 @@ img {
 
     &:hover {
       color: $color-text-dark;
-      background: darken($color-primary, 3%);
+      background: $color-primary-dark;
     }
 
     &.button--icon-paper::before {
@@ -99,8 +99,8 @@ img {
       border-color: $color-secondary;
 
       &:hover {
-        color: lighten($color-secondary, 25%);
-        border-color: lighten($color-secondary, 25%);
+        color: $color-secondary-light;
+        border-color: $color-secondary-light;
       }
     }
 
