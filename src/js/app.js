@@ -5,7 +5,6 @@ import MoveTo from 'moveto';
 // popup
 (() => {
   const popup = document.querySelector('.js-popup');
-
   if (popup === null) return;
 
   const togglePopup = () => popup.classList.toggle('js-popup-visible');
@@ -27,7 +26,6 @@ import MoveTo from 'moveto';
 // reviews slider
 (() => {
   const sliderContainer = document.querySelector('.slider-reviews');
-
   if (sliderContainer === null) return;
 
   const dots = sliderContainer.querySelectorAll('.js-slider-dots span');
@@ -54,7 +52,6 @@ import MoveTo from 'moveto';
 // portfolio slider
 (() => {
   const sliderContainer = document.querySelector('.slider-portfolio');
-
   if (sliderContainer === null) return;
 
   const slides       = sliderContainer.querySelectorAll('.js-slide');
@@ -68,19 +65,19 @@ import MoveTo from 'moveto';
   const togglePrevSlide    = index => slides[index].classList.toggle('prev');
   const toggleNextSlide    = index => slides[index].classList.toggle('next');
   const toggleCurrentSlide = index => slides[index].classList.toggle('active');
+  const toggleDot          = index => dots  [index].classList.toggle('active');
 
-  const toggleDot = index => dots[index].classList.toggle('active');
+  const toggleFullSlide = () => {
+    togglePrevSlide(getPrevSlide());
+    toggleNextSlide(getNextSlide());
+    toggleCurrentSlide(currentSlide);
+    toggleDot(currentSlide);
+  };
 
   const setCurrentSlide = (index) => {
-    togglePrevSlide(getPrevSlide());
-    toggleNextSlide(getNextSlide());
-    toggleCurrentSlide(currentSlide);
-    toggleDot(currentSlide);
+    toggleFullSlide();
     currentSlide = index;
-    togglePrevSlide(getPrevSlide());
-    toggleNextSlide(getNextSlide());
-    toggleCurrentSlide(currentSlide);
-    toggleDot(currentSlide);
+    toggleFullSlide();
   };
 
   const prevSlide = () => setCurrentSlide(getPrevSlide());
