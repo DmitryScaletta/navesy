@@ -41,6 +41,16 @@ img {
   width: $container-max-xl;
 }
 
+%mobile-container {
+  @extend %clearfix;
+
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: floor($grid-gutter-width / 2);
+  padding-right: ceil($grid-gutter-width / 2);
+  max-width: 576px;
+}
+
 .upper {
   text-transform: uppercase;
 }
@@ -83,6 +93,13 @@ img {
       content: $icon-alert;
       padding-right: 6px;
     }
+
+    &.button--icon-phone::before {
+      @extend .icon;
+
+      content: $icon-mobile;
+      padding-right: 6px;
+    }
   }
 
   &--secondary {
@@ -118,6 +135,13 @@ img {
 
   &--no-shadow {
     box-shadow: none;
+  }
+
+  &--small {
+    &.button--primary {
+      padding: 11px 30px;
+      font-size: 16px;
+    }
   }
 }
 
@@ -165,5 +189,21 @@ img {
 
   &__text-bigger {
     font-size: 48px;
+  }
+
+  &--mobile {
+    padding: 10px 18px;
+    font-size: 18px;
+    line-height: 1.5;
+    text-transform: none;
+
+    &::before {
+      width: 2px;
+    }
+
+    .caption__title {
+      margin: 0 0 5px;
+      font-size: 16px;
+    }
   }
 }

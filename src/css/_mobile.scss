@@ -1,0 +1,510 @@
+.mobile-container {
+  @extend %mobile-container;
+
+  &--fixed {
+    max-width: 360px;
+  }
+}
+
+.mobile-title {
+  margin: 0;
+  padding: 21px 0;
+  text-align: center;
+  font-size: 18px;
+  color: $color-secondary;
+  text-transform: uppercase;
+
+  &--light {
+    color: $color-text-light;
+  }
+}
+
+.mobile-header {
+  &__top {
+    position: relative;
+    padding-top: 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, $color-secondary, $color-secondary-light);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.67;
+    color: $color-text-light;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    padding: 15px 0 30px;
+    font-size: 16px;
+    line-height: 18px;
+    color: $color-text-light;
+  }
+
+  &__phone {
+    display: block;
+    font-size: 30px;
+  }
+
+  &__button {
+    margin: 15px 0;
+    font-size: 14px;
+  }
+
+  &__bottom {
+    padding: 60px 0;
+    background: url("../img/mobile/mobile-header-bg.jpg") center no-repeat;
+    background-size: cover;
+  }
+}
+
+.mobile-order {
+  padding-bottom: 30px;
+
+  &__header {
+    position: relative;
+    padding: 30px 0 30px 46px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 8px;
+      left: 0;
+      width: 40px;
+      background: url("../img/icon-ruler.svg") left center no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.33;
+    text-transform: uppercase;
+  }
+
+  &__text-highlighted {
+    font-size: 24px;
+    line-height: 1.33;
+    color: $color-secondary;
+    text-transform: uppercase;
+  }
+
+  &__input-group {
+    position: relative;
+    padding-bottom: 20px;
+
+    &--user::after,
+    &--phone::after {
+      @extend .icon;
+
+      position: absolute;
+      padding: 13px 0;
+      top: 0;
+      left: 10px;
+      width: 25px;
+      text-align: center;
+      line-height: 1em;
+    }
+
+    &--user::after {
+      content: $icon-user;
+    }
+
+    &--phone::after {
+      content: $icon-mobile;
+    }
+  }
+
+  &__input {
+    display: block;
+    padding: 11px 20px 11px 40px;
+    outline: none;
+    font-size: 16px;
+    font-family: inherit;
+    color: inherit;
+    border: 1px solid #d1d1d1;
+    width: 100%;
+    transition: border-color $transition-duration $transition-function;
+
+    &:focus {
+      border-color: $color-secondary-light;
+    }
+  }
+
+  &__button-wrapper {
+    padding-top: 6px;
+    text-align: center;
+  }
+
+  &__button {}
+}
+
+.mobile-steps {
+  padding-bottom: 30px;
+
+  &__header {
+    background: linear-gradient(to right, $color-secondary, $color-secondary-light);
+  }
+
+  &__title {
+    margin: 13px 0;
+    font-size: 18px;
+    color: $color-text-light;
+    text-transform: uppercase;
+  }
+}
+
+.mobile-step {
+  &__title {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: $color-secondary;
+  }
+
+  &__number {
+    padding-right: 10px;
+    font-size: 36px;
+    color: $color-primary;
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__select {
+    margin: 0 auto;
+    text-align: left;
+    max-width: 360px;
+  }
+
+  &__select-title {
+    margin: 20px 0 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: $color-secondary;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    height: 40px;
+    border-radius: 5px;
+  }
+}
+
+.mobile-portfolio {
+  padding-bottom: 30px;
+  background: linear-gradient(to right, $color-secondary, $color-secondary-light);
+}
+
+.mobile-slider-portfolio {
+  position: relative;
+  margin: 0 auto;
+  max-width: 480px;
+
+  &__list {
+    margin: 0 auto;
+    padding: 0 35px;
+    min-width: 250px;
+  }
+
+  &__item {
+    display: none;
+    margin: 0 auto;
+    max-width: 100%;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__next,
+  &__prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 35px;
+    cursor: pointer;
+
+    &:hover::before,
+    &:hover::after {
+      background: $color-primary;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 3px;
+      height: 45px;
+      background: #fff;
+      transition: background-color $transition-duration $transition-function;
+    }
+
+    &::before {
+      top: calc(50% - 43px);
+    }
+
+    &::after {
+      top: 50%;
+    }
+  }
+
+  &__prev {
+    left: 0;
+
+    &::before {
+      right: 18px;
+      transform: rotate(15deg);
+    }
+
+    &::after {
+      right: 18px;
+      transform: rotate(-15deg);
+    }
+  }
+
+  &__next {
+    right: 0;
+
+    &::before {
+      left: 18px;
+      transform: rotate(-15deg);
+    }
+
+    &::after {
+      left: 18px;
+      transform: rotate(15deg);
+    }
+  }
+}
+
+.mobile-reviews {
+  background: linear-gradient(to right, $color-secondary, $color-secondary-light);
+}
+
+.mobile-slider-reviews {
+  &__list {
+    padding-top: 65px;
+  }
+
+  &__controls {
+    padding: 40px 0;
+    font-size: 0;
+    text-align: center;
+  }
+
+  &__dot {
+    display: inline-block;
+    margin: 0 12px;
+    height: 15px;
+    width: 15px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background $transition-duration $transition-function;
+
+    &:hover,
+    &.active {
+      background: #fff;
+    }
+  }
+}
+
+.mobile-review-item {
+  display: none;
+  position: relative;
+
+  &.active {
+    display: block;
+  }
+
+  &__circle {
+    display: block;
+    position: absolute;
+    margin-left: -65px;
+    top: -65px;
+    left: 50%;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__image {
+    display: block;
+    max-width: 100%;
+  }
+
+  &__desc {
+    background: #fff;
+    padding: 65px 0 30px;
+  }
+
+  &__user {
+    padding: 15px;
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &__city {
+    font-style: italic;
+  }
+
+  &__text {
+    padding: 0 15px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+.mobile-clients {
+  padding-bottom: 15px;
+
+  &__content {
+    font-size: 0;
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 35px;
+  }
+}
+
+.mobile-promo {
+  position: relative;
+  padding-top: 88px;
+  min-height: 233px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+  }
+
+  &--promo-1 {
+    background-image: url("../img/mobile/promo-1-bg.jpg");
+
+    &::before {
+      background-image: url("../img/mobile/promo-1.png");
+    }
+  }
+
+  &--promo-2 {
+    background-image: url("../img/mobile/promo-2-bg.jpg");
+
+    &::before {
+      background-image: url("../img/mobile/promo-2.png");
+    }
+  }
+
+  &--promo-3 {
+    background-image: url("../img/mobile/promo-3-bg.jpg");
+
+    &::before {
+      background-image: url("../img/mobile/promo-3.png");
+    }
+  }
+
+  &__button-wrapper {
+    position: relative;
+    padding: 10px 0;
+    z-index: 1;
+    text-align: center;
+  }
+}
+
+.mobile-footer {
+  text-align: center;
+  background: #353535;
+  border-top: 2px solid $color-secondary;
+
+  &__top-link {
+    display: block;
+    margin: 0 auto;
+    width: 60px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 24px;
+    text-align: center;
+    background: $color-secondary;
+    cursor: pointer;
+
+    &::before {
+      @extend .icon;
+
+      content: $icon-up-open;
+    }
+  }
+
+  &__text {
+    padding: 20px 0;
+    font-size: 18px;
+    color: $color-text-light;
+    text-transform: uppercase;
+  }
+
+  &__text-highlighted {
+    color: $color-secondary;
+  }
+
+  &__contacts {}
+
+  &__phone {
+    font-size: 18px;
+    color: $color-secondary;
+    transition: color $transition-duration $transition-function;
+
+    &:hover {
+      color: $color-secondary-light;
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    transition: color $transition-duration $transition-function;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+
+  &__copyright-text {
+    display: inline-block;
+    font-size: 12px;
+    color: $color-text-dark;
+  }
+
+  &__copyright-logo {
+    display: inline-block;
+    width: 73px;
+    height: 14px;
+    background: url("../img/logo-art6.svg") center no-repeat;
+  }
+}
