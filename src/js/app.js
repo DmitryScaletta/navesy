@@ -1,4 +1,5 @@
 import Swipe from 'swipejs';
+import MoveTo from 'moveto';
 
 
 // popup
@@ -49,3 +50,12 @@ import Swipe from 'swipejs';
   }));
 })();
 
+
+// moveTo
+(() => {
+  const moveTo = new MoveTo();
+  Array.prototype.forEach.call(
+    document.querySelectorAll('.js-move-to'),
+    elem => moveTo.registerTrigger(elem),
+  );
+})();
