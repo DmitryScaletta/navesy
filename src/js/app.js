@@ -51,6 +51,51 @@ import MoveTo from 'moveto';
 })();
 
 
+// portfolio slider
+(() => {
+  const sliderContainer = document.querySelector('.slider-portfolio');
+
+  if (sliderContainer === null) return;
+
+  const slides       = sliderContainer.querySelectorAll('.js-slide');
+  const dots         = sliderContainer.querySelectorAll('.js-dot');
+  const slidesCount  = slides.length;
+  let   currentSlide = 0;
+
+  const getPrevSlide = () => ((currentSlide === 0) ? slidesCount - 1 : currentSlide - 1);
+  const getNextSlide = () => ((currentSlide === slidesCount - 1) ? 0 : currentSlide + 1);
+
+  const togglePrevSlide    = index => slides[index].classList.toggle('prev');
+  const toggleNextSlide    = index => slides[index].classList.toggle('next');
+  const toggleCurrentSlide = index => slides[index].classList.toggle('active');
+
+  const toggleDot = index => dots[index].classList.toggle('active');
+
+  const setCurrentSlide = (index) => {
+    togglePrevSlide(getPrevSlide());
+    toggleNextSlide(getNextSlide());
+    toggleCurrentSlide(currentSlide);
+    toggleDot(currentSlide);
+    currentSlide = index;
+    togglePrevSlide(getPrevSlide());
+    toggleNextSlide(getNextSlide());
+    toggleCurrentSlide(currentSlide);
+    toggleDot(currentSlide);
+  };
+
+  const prevSlide = () => setCurrentSlide(getPrevSlide());
+  const nextSlide = () => setCurrentSlide(getNextSlide());
+
+  sliderContainer.querySelector('.js-prev').addEventListener('click', prevSlide);
+  sliderContainer.querySelector('.js-next').addEventListener('click', nextSlide);
+
+  Array.prototype.forEach.call(
+    dots,
+    (dot, index) => dot.addEventListener('click', () => setCurrentSlide(index)),
+  );
+})();
+
+
 // moveTo
 (() => {
   const moveTo = new MoveTo();

@@ -481,6 +481,8 @@
 }
 
 .slider-portfolio {
+  user-select: none;
+
   &__list {
     @extend %row;
 
