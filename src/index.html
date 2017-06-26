@@ -25,7 +25,7 @@
           <a href="tel:+79895698534" class="section-header__phone-number">+ 7 (989) 569-85-34</a><br>
           <span>Без выходных и праздничных дней</span>
           <div class="section-header__button-wrapper">
-            <a href="#" class="button button--secondary button--icon-phone js-open-popup">Обратный звонок</a>
+            <a href="#" class="button button--secondary button--icon-phone js-popup-toggle">Обратный звонок</a>
           </div>
         </div>
       </div>
@@ -162,7 +162,7 @@
         <div class="section-promo__box">
           <div class="caption ">Долговечный навес из качественных материалов</div>
           <div class="section-promo__button-wrapper">
-            <a href="#" class="button button--primary js-open-popup">Заказать сейчас</a>
+            <a href="#" class="button button--primary js-popup-toggle">Заказать сейчас</a>
           </div>
         </div>
       </div>
@@ -284,7 +284,7 @@
             <span class="caption__text-bigger">15%</span>
           </div>
           <div class="section-promo__button-wrapper">
-            <a href="#" class="button button--primary button--icon-warning js-open-popup">Хочу скидку</a>
+            <a href="#" class="button button--primary button--icon-warning js-popup-toggle">Хочу скидку</a>
           </div>
         </div>
       </div>
@@ -292,159 +292,165 @@
   </section>
 
   <section class="section section-reviews">
-    <div class="section__inner">
+    <div class="section-reviews__inner">
       <h2 class="section__title section__title--light">Отзывы</h2>
         
       <div class="slider-reviews">
-        <div class="slider-reviews__list">
+        <div class="slider-reviews__slides">
 
-          <div class="slider-reviews__item active">
-            <div class="review-item">
-              <div class="review-item__circle">
-                <img src="img/media/avatar-1.jpg" alt="" class="review-item__image">
-              </div>
-              <div class="review-item__desc">
-                <div class="review-item__user">
-                  <span class="review-item__name">Ангелина,</span>
-                  <span class="review-item__city">г.Краснодар</span>
+          <div class="slider-reviews__slide">
+            <div class="slider-reviews__item">
+              <div class="review-item">
+                <div class="review-item__circle">
+                  <img src="img/media/avatar-1.jpg" alt="" class="review-item__image">
                 </div>
-                <div class="review-item__text">
-                  Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще и водостоки в подарок сделали!
+                <div class="review-item__desc">
+                  <div class="review-item__user">
+                    <span class="review-item__name">Ангелина,</span>
+                    <span class="review-item__city">г.Краснодар</span>
+                  </div>
+                  <div class="review-item__text">
+                    Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще и водостоки в подарок сделали!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider-reviews__item">
+              <div class="review-item">
+                <div class="review-item__circle">
+                  <img src="img/media/avatar-2.jpg" alt="" class="review-item__image">
+                </div>
+                <div class="review-item__desc">
+                  <div class="review-item__user">
+                    <span class="review-item__name">Поликарп,</span>
+                    <span class="review-item__city">г.Абинск</span>
+                  </div>
+                  <div class="review-item__text">
+                    Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще в водостоки в подарок сделали!Фирмой остались довольны на все 100! Бюджет у нас был немного ограничен, подумали-"повертели" и уместились в ту сумму, которой мы располагали.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider-reviews__item">
+              <div class="review-item">
+                <div class="review-item__circle">
+                  <img src="img/media/avatar-1.jpg" alt="" class="review-item__image">
+                </div>
+                <div class="review-item__desc">
+                  <div class="review-item__user">
+                    <span class="review-item__name">Ангелина,</span>
+                    <span class="review-item__city">г.Краснодар</span>
+                  </div>
+                  <div class="review-item__text">
+                    Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще и водостоки в подарок сделали!
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="slider-reviews__item active">
-            <div class="review-item">
-              <div class="review-item__circle">
-                <img src="img/media/avatar-2.jpg" alt="" class="review-item__image">
-              </div>
-              <div class="review-item__desc">
-                <div class="review-item__user">
-                  <span class="review-item__name">Поликарп,</span>
-                  <span class="review-item__city">г.Абинск</span>
+          <div class="slider-reviews__slide">
+            <div class="slider-reviews__item">
+              <div class="review-item">
+                <div class="review-item__circle">
+                  <img src="img/media/avatar-2.jpg" alt="" class="review-item__image">
                 </div>
-                <div class="review-item__text">
-                  Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще в водостоки в подарок сделали!Фирмой остались довольны на все 100! Бюджет у нас был немного ограничен, подумали-"повертели" и уместились в ту сумму, которой мы располагали.
+                <div class="review-item__desc">
+                  <div class="review-item__user">
+                    <span class="review-item__name">Поликарп,</span>
+                    <span class="review-item__city">г.Абинск</span>
+                  </div>
+                  <div class="review-item__text">
+                    Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще в водостоки в подарок сделали!Фирмой остались довольны на все 100! Бюджет у нас был немного ограничен, подумали-"повертели" и уместились в ту сумму, которой мы располагали.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider-reviews__item">
+              <div class="review-item">
+                <div class="review-item__circle">
+                  <img src="img/media/avatar-1.jpg" alt="" class="review-item__image">
+                </div>
+                <div class="review-item__desc">
+                  <div class="review-item__user">
+                    <span class="review-item__name">Ангелина,</span>
+                    <span class="review-item__city">г.Краснодар</span>
+                  </div>
+                  <div class="review-item__text">
+                    Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще и водостоки в подарок сделали!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider-reviews__item">
+              <div class="review-item">
+                <div class="review-item__circle">
+                  <img src="img/media/avatar-2.jpg" alt="" class="review-item__image">
+                </div>
+                <div class="review-item__desc">
+                  <div class="review-item__user">
+                    <span class="review-item__name">Поликарп,</span>
+                    <span class="review-item__city">г.Абинск</span>
+                  </div>
+                  <div class="review-item__text">
+                    Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще в водостоки в подарок сделали!Фирмой остались довольны на все 100! Бюджет у нас был немного ограничен, подумали-"повертели" и уместились в ту сумму, которой мы располагали.
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="slider-reviews__item active">
-            <div class="review-item">
-              <div class="review-item__circle">
-                <img src="img/media/avatar-1.jpg" alt="" class="review-item__image">
-              </div>
-              <div class="review-item__desc">
-                <div class="review-item__user">
-                  <span class="review-item__name">Ангелина,</span>
-                  <span class="review-item__city">г.Краснодар</span>
+          <div class="slider-reviews__slide">
+            <div class="slider-reviews__item">
+              <div class="review-item">
+                <div class="review-item__circle">
+                  <img src="img/media/avatar-1.jpg" alt="" class="review-item__image">
                 </div>
-                <div class="review-item__text">
-                  Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще и водостоки в подарок сделали!
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="slider-reviews__item">
-            <div class="review-item">
-              <div class="review-item__circle">
-                <img src="img/media/avatar-2.jpg" alt="" class="review-item__image">
-              </div>
-              <div class="review-item__desc">
-                <div class="review-item__user">
-                  <span class="review-item__name">Поликарп,</span>
-                  <span class="review-item__city">г.Абинск</span>
-                </div>
-                <div class="review-item__text">
-                  Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще в водостоки в подарок сделали!Фирмой остались довольны на все 100! Бюджет у нас был немного ограничен, подумали-"повертели" и уместились в ту сумму, которой мы располагали.
+                <div class="review-item__desc">
+                  <div class="review-item__user">
+                    <span class="review-item__name">Ангелина,</span>
+                    <span class="review-item__city">г.Краснодар</span>
+                  </div>
+                  <div class="review-item__text">
+                    Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще и водостоки в подарок сделали!
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="slider-reviews__item">
-            <div class="review-item">
-              <div class="review-item__circle">
-                <img src="img/media/avatar-1.jpg" alt="" class="review-item__image">
-              </div>
-              <div class="review-item__desc">
-                <div class="review-item__user">
-                  <span class="review-item__name">Ангелина,</span>
-                  <span class="review-item__city">г.Краснодар</span>
+            <div class="slider-reviews__item">
+              <div class="review-item">
+                <div class="review-item__circle">
+                  <img src="img/media/avatar-2.jpg" alt="" class="review-item__image">
                 </div>
-                <div class="review-item__text">
-                  Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще и водостоки в подарок сделали!
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="slider-reviews__item">
-            <div class="review-item">
-              <div class="review-item__circle">
-                <img src="img/media/avatar-2.jpg" alt="" class="review-item__image">
-              </div>
-              <div class="review-item__desc">
-                <div class="review-item__user">
-                  <span class="review-item__name">Поликарп,</span>
-                  <span class="review-item__city">г.Абинск</span>
-                </div>
-                <div class="review-item__text">
-                  Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще в водостоки в подарок сделали!Фирмой остались довольны на все 100! Бюджет у нас был немного ограничен, подумали-"повертели" и уместились в ту сумму, которой мы располагали.
+                <div class="review-item__desc">
+                  <div class="review-item__user">
+                    <span class="review-item__name">Поликарп,</span>
+                    <span class="review-item__city">г.Абинск</span>
+                  </div>
+                  <div class="review-item__text">
+                    Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще в водостоки в подарок сделали!Фирмой остались довольны на все 100! Бюджет у нас был немного ограничен, подумали-"повертели" и уместились в ту сумму, которой мы располагали.
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="slider-reviews__item">
-            <div class="review-item">
-              <div class="review-item__circle">
-                <img src="img/media/avatar-1.jpg" alt="" class="review-item__image">
-              </div>
-              <div class="review-item__desc">
-                <div class="review-item__user">
-                  <span class="review-item__name">Ангелина,</span>
-                  <span class="review-item__city">г.Краснодар</span>
+            <div class="slider-reviews__item">
+              <div class="review-item">
+                <div class="review-item__circle">
+                  <img src="img/media/avatar-1.jpg" alt="" class="review-item__image">
                 </div>
-                <div class="review-item__text">
-                  Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще и водостоки в подарок сделали!
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="slider-reviews__item">
-            <div class="review-item">
-              <div class="review-item__circle">
-                <img src="img/media/avatar-2.jpg" alt="" class="review-item__image">
-              </div>
-              <div class="review-item__desc">
-                <div class="review-item__user">
-                  <span class="review-item__name">Поликарп,</span>
-                  <span class="review-item__city">г.Абинск</span>
-                </div>
-                <div class="review-item__text">
-                  Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще в водостоки в подарок сделали!Фирмой остались довольны на все 100! Бюджет у нас был немного ограничен, подумали-"повертели" и уместились в ту сумму, которой мы располагали.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="slider-reviews__item">
-            <div class="review-item">
-              <div class="review-item__circle">
-                <img src="img/media/avatar-1.jpg" alt="" class="review-item__image">
-              </div>
-              <div class="review-item__desc">
-                <div class="review-item__user">
-                  <span class="review-item__name">Ангелина,</span>
-                  <span class="review-item__city">г.Краснодар</span>
-                </div>
-                <div class="review-item__text">
-                  Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще и водостоки в подарок сделали!
+                <div class="review-item__desc">
+                  <div class="review-item__user">
+                    <span class="review-item__name">Ангелина,</span>
+                    <span class="review-item__city">г.Краснодар</span>
+                  </div>
+                  <div class="review-item__text">
+                    Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще и водостоки в подарок сделали!
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
         </div>
-        <div class="slider-reviews__controls">
+        <div class="slider-reviews__controls js-slider-dots">
           <span class="slider-reviews__dot active"></span>
           <span class="slider-reviews__dot"></span>
           <span class="slider-reviews__dot"></span>
@@ -521,7 +527,7 @@
             <span class="caption__text-big">А ты хочешь стать нашим клиентом?</span>
           </div>
           <div class="section-promo__button-wrapper">
-            <a href="#" class="button button--primary button--icon-warning js-open-popup">Хочу конечно!</a>
+            <a href="#" class="button button--primary button--icon-warning js-popup-toggle">Хочу конечно!</a>
           </div>
         </div>
       </div>
@@ -530,7 +536,7 @@
 
   <footer class="section-footer">
     <a class="section-footer__top-link"></a>
-    <a class="section-footer__circle-link js-open-popup"></a>
+    <a class="section-footer__circle-link js-popup-toggle"></a>
     <div class="section-footer__inner">
       <div class="section-footer__content">
         <div class="section-footer__text">
@@ -550,9 +556,9 @@
     </div>
   </footer>
 
-  <div class="popup js-popup-visible">
+  <div class="popup js-popup">
     <div class="popup__form order-form order-form--keyboard">
-      <div class="popup__close js-popup-close"></div>
+      <div class="popup__close js-popup-toggle"></div>
       <form action="#">
         <div class="order-form__text">
           <span class="order-form__highlighted-text">заполните заявку</span>
@@ -569,5 +575,6 @@
     </div>
   </div>
 
+  <script src="js/app.js"></script>
 </body>
 </html>

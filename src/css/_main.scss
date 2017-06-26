@@ -738,29 +738,44 @@
 
 .section-reviews {
   max-height: 800px;
+  overflow: hidden;
   background:
     url("../img/section-reviews-mask.png") top center no-repeat,
     mix($color-secondary, $color-secondary-light);
   background:
     url("../img/section-reviews-mask.png") top center no-repeat,
     linear-gradient(to right, $color-secondary, $color-secondary-light);
+
+  &__inner {
+    margin: 0 auto;
+    width: $container-max-xl;
+  }
 }
 
 .slider-reviews {
-  &__list {
-    @extend %row;
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+
+  &__slides {
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__slide {
+    display: flex;
+    padding: 0 ($grid-gutter-width-base / 2);
+    justify-content: space-between;
+    float: left;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
   }
 
   &__item {
-    @extend %col-4;
-
-    display: none;
+    width: 360px;
     padding-top: 68px;
     padding-bottom: 50px;
-
-    &.active {
-      display: block;
-    }
   }
 
   &__controls {
@@ -1033,7 +1048,7 @@
   background: rgba(#000, 0.4);
 
   &.js-popup-visible {
-    // display: block;
+    display: block;
   }
 
   &__form {
