@@ -20,11 +20,38 @@
 }
 
 .mobile-header {
+  overflow: hidden;
+
   &__top {
     position: relative;
     padding-top: 20px;
     text-align: center;
+    background: mix($color-secondary, $color-secondary-light);
     background: linear-gradient(to bottom, $color-secondary, $color-secondary-light);
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 0;
+      margin-left: -960px;
+      bottom: -20px;
+      left: 50%;
+      width: 1920px;
+      height: 1920px;
+      border-radius: 0 0 50% 50%;
+      background:
+        url("../img/mobile/mobile-header-mask.png") bottom center no-repeat,
+        mix($color-secondary, $color-secondary-light);
+      background:
+        url("../img/mobile/mobile-header-mask.png") bottom center no-repeat,
+        linear-gradient(to bottom, $color-secondary 87%, $color-secondary-light);
+    }
+  }
+
+  &__top-content {
+    position: relative;
+    z-index: 1;
   }
 
   &__title {
