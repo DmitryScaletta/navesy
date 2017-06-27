@@ -24,29 +24,35 @@ import Tooltip from 'tooltip.js';
 })();
 
 
-// reviews slider
+// reviews slider and mobile reviews slider
 (() => {
-  const sliderContainer = document.querySelector('.slider-reviews');
-  if (sliderContainer === null) return;
+  const sliders = [
+    document.querySelector('.slider-reviews'),
+    document.querySelector('.mobile-slider-reviews'),
+  ];
 
-  const dots = sliderContainer.querySelectorAll('.js-slider-dots span');
+  const clearDots = dots => Array.prototype.forEach.call(dots, dot => dot.classList.remove('active'));
+  const setCurrentDot = (dots, index) => dots[index].classList.add('active');
 
-  const clearDots = () => Array.prototype.forEach.call(dots, dot => dot.classList.remove('active'));
-  const setCurrentDot = index => dots[index].classList.add('active');
+  sliders.forEach((sliderContainer) => {
+    if (sliderContainer === null) return;
 
-  const slider = new Swipe(sliderContainer, {
-    draggable: true,
-    callback: (index) => {
-      clearDots();
-      setCurrentDot(index);
-    },
+    const dots = sliderContainer.querySelectorAll('.js-slider-dots span');
+
+    const slider = new Swipe(sliderContainer, {
+      draggable: true,
+      callback: (index) => {
+        clearDots(dots);
+        setCurrentDot(dots, index);
+      },
+    });
+
+    Array.prototype.forEach.call(dots, (dot, index) => dot.addEventListener('click', () => {
+      clearDots(dots);
+      setCurrentDot(dots, index);
+      slider.slide(index);
+    }));
   });
-
-  Array.prototype.forEach.call(dots, (dot, index) => dot.addEventListener('click', () => {
-    clearDots();
-    setCurrentDot(index);
-    slider.slide(index);
-  }));
 })();
 
 
@@ -94,7 +100,7 @@ import Tooltip from 'tooltip.js';
 })();
 
 
-// portfolit mobile slider
+// mobile portfolio slider
 (() => {
   const sliderContainer = document.querySelector('.mobile-slider-portfolio');
   if (sliderContainer === null) return;
