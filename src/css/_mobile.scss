@@ -173,7 +173,7 @@
     text-align: center;
   }
 
-  &__button {}
+  // &__button {}
 }
 
 .mobile-steps {
@@ -378,6 +378,7 @@
 
 .mobile-reviews {
   background: linear-gradient(to right, $color-secondary, $color-secondary-light);
+  margin-bottom: -65px;
 
   &__content {
     margin-top: 65px;
@@ -581,7 +582,7 @@
     color: $color-secondary;
   }
 
-  &__contacts {}
+  // &__contacts {}
 
   &__phone {
     font-size: 18px;
