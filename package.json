@@ -30,6 +30,7 @@
   "dependencies": {
     "moveto": "^1.6.1",
     "normalize.css": "^7.0.0",
-    "swipejs": "^2.2.8"
+    "swipejs": "^2.2.8",
+    "tooltip.js": "^1.1.4"
   }
 }
