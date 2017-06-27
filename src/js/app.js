@@ -172,3 +172,17 @@ import Tooltip from 'tooltip.js';
     e.preventDefault();
   });
 })();
+
+
+// floating button
+(() => {
+  const floatingButton = document.querySelector('.js-floating-button');
+  if (floatingButton === null) return;
+
+  floatingButton.setAttribute('aria-hidden', true);
+
+  window.addEventListener('scroll', () => {
+    const isHidden = (document.body.scrollTop > 250) ? false : true;
+    floatingButton.setAttribute('aria-hidden', isHidden);
+  });
+})();

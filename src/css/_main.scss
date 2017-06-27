@@ -949,40 +949,6 @@
     }
   }
 
-  &__circle-link {
-    display: none;
-    position: absolute;
-    margin-right: -770px;
-    top: -53px;
-    right: 50%;
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-    text-align: center;
-    font-size: 60px;
-    border-radius: 50%;
-    background: $color-primary;
-    color: $color-text-dark;
-    box-shadow: 0 2px 13px rgba(#110c0c, 0.3);
-    cursor: pointer;
-    transition: background-color $transition-duration $transition-function;
-
-    &:hover {
-      background: $color-primary-dark;
-      color: $color-text-dark;
-    }
-
-    &::before {
-      @extend .icon;
-
-      content: $icon-mobile-alt;
-    }
-
-    @media (min-width: 1580px) {
-      display: block;
-    }
-  }
-
   &__content {
     @extend %row;
   }
@@ -1085,5 +1051,67 @@
     &::after {
       content: "✖";
     }
+  }
+}
+
+.floating-button {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  margin-right: -770px;
+  bottom: 170px;
+  right: 50%;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 60px;
+  border-radius: 50%;
+  background: $color-primary;
+  color: $color-text-dark;
+  cursor: pointer;
+  transition: background-color $transition-duration $transition-function;
+  animation: pulse 4s infinite;
+
+  &:hover {
+    background: $color-primary-dark;
+    color: $color-text-dark;
+    animation: none;
+  }
+
+  &::before {
+    @extend .icon;
+
+    content: $icon-mobile-alt;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: 0 2px 13px rgba(#110c0c, 0.3);
+  }
+
+  @media (min-width: 1580px) {
+    display: block;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba($color-text-dark, 0.4);
+  }
+
+  35% {
+    box-shadow: 0 0 0 15px rgba($color-text-dark, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 0 0 rgba($color-text-dark, 0);
   }
 }
