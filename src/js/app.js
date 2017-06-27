@@ -1,5 +1,6 @@
 import Swipe from 'swipejs';
 import MoveTo from 'moveto';
+import Tooltip from 'tooltip.js';
 
 
 // popup
@@ -99,5 +100,50 @@ import MoveTo from 'moveto';
   Array.prototype.forEach.call(
     document.querySelectorAll('.js-move-to'),
     elem => moveTo.registerTrigger(elem),
+  );
+})();
+
+
+// form validation
+(() => {
+  console.log(document.querySelectorAll('.js-order-form').length);
+  Array.prototype.forEach.call(
+    document.querySelectorAll('.js-order-form'),
+    (form) => {
+      const validatedItems = [
+        form.querySelector('input[name=name]'),
+        form.querySelector('input[name=phone]'),
+      ];
+
+      const tooltips = validatedItems.map(item => new Tooltip(item, {
+        title: 'Это обязательное поле',
+        trigger: '',
+      }));
+
+      const inputInvalidClass = 'invalid';
+
+      // remove invalid class on focus
+      validatedItems.forEach((elem, index) => {
+        elem.addEventListener('focus', () => {
+          if (elem.classList.contains(inputInvalidClass)) elem.classList.remove(inputInvalidClass);
+          tooltips[index].hide();
+        });
+      });
+
+      const validateTextInput = value => value.trim() !== '';
+
+      form.addEventListener('submit', (e) => {
+        const formValid = validatedItems.every((item, index) => {
+          const isItemValid = validateTextInput(item.value);
+          if (!isItemValid) {
+            item.classList.add(inputInvalidClass);
+            tooltips[index].show();
+          }
+          return isItemValid;
+        });
+
+        if (!formValid) e.preventDefault();
+      });
+    },
   );
 })();

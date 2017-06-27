@@ -35,16 +35,16 @@
         <div class="section-header__form">
           
           <div class="order-form order-form--ruller order-form--transparent">
-            <form action="#">
+            <form action="#" class="js-order-form">
               <div class="order-form__text">
                 Позовите нас на замер
                 <span class="order-form__highlighted-text">это Бесплатно!</span>
               </div>
               <div class="order-form__input-group order-form__input-group--user">
-                <input type="text" class="order-form__input" placeholder="Введите ваше имя">
+                <input type="text" name="name" class="order-form__input" placeholder="Введите ваше имя">
               </div>
               <div class="order-form__input-group order-form__input-group--phone">
-                <input type="text" class="order-form__input" placeholder="Введите ваш телефон">
+                <input type="text" name="phone" class="order-form__input" placeholder="Введите ваш телефон">
               </div>
               <button class="order-form__button button button--primary button--no-shadow button--icon-paper">Отправить заявку</button>
             </form>
@@ -559,16 +559,16 @@
   <div class="popup js-popup">
     <div class="popup__form order-form order-form--keyboard">
       <div class="popup__close js-popup-toggle"></div>
-      <form action="#">
+      <form action="#" class="js-order-form">
         <div class="order-form__text">
           <span class="order-form__highlighted-text">заполните заявку</span>
           и мы свяжемся с вами
         </div>
         <div class="order-form__input-group order-form__input-group--user">
-          <input type="text" class="order-form__input" placeholder="Введите ваше имя">
+          <input type="text" name="name" class="order-form__input" placeholder="Введите ваше имя">
         </div>
         <div class="order-form__input-group order-form__input-group--phone">
-          <input type="text" class="order-form__input" placeholder="Введите ваш телефон">
+          <input type="text" name="phone" class="order-form__input" placeholder="Введите ваш телефон">
         </div>
         <button class="order-form__button button button--primary button--no-shadow button--icon-paper">Отправить заявку</button>
       </form>
