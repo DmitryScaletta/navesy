@@ -207,10 +207,11 @@ import Tooltip from 'tooltip.js';
   const floatingButton = document.querySelector('.js-floating-button');
   if (floatingButton === null) return;
 
-  floatingButton.setAttribute('aria-hidden', true);
-
-  window.addEventListener('scroll', () => {
+  const handleFloatingButton = () => {
     const isHidden = window.pageYOffset < 250;
     floatingButton.setAttribute('aria-hidden', isHidden);
-  });
+  };
+
+  window.addEventListener('load',   handleFloatingButton);
+  window.addEventListener('scroll', handleFloatingButton);
 })();
