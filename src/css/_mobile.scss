@@ -154,10 +154,17 @@
     color: inherit;
     border: 1px solid #d1d1d1;
     width: 100%;
-    transition: border-color $transition-duration $transition-function;
+    transition:
+      background-color $transition-duration $transition-function,
+      border-color     $transition-duration $transition-function;
 
     &:focus {
       border-color: $color-secondary-light;
+    }
+
+    &.invalid {
+      background: #ffebee;
+      border-color: #ef5350;
     }
   }
 
