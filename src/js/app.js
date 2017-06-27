@@ -106,7 +106,6 @@ import Tooltip from 'tooltip.js';
 
 // form validation
 (() => {
-  console.log(document.querySelectorAll('.js-order-form').length);
   Array.prototype.forEach.call(
     document.querySelectorAll('.js-order-form'),
     (form) => {
@@ -133,7 +132,7 @@ import Tooltip from 'tooltip.js';
       const validateTextInput = value => value.trim() !== '';
 
       form.addEventListener('submit', (e) => {
-        const formValid = validatedItems.every((item, index) => {
+        const isFormValid = validatedItems.every((item, index) => {
           const isItemValid = validateTextInput(item.value);
           if (!isItemValid) {
             item.classList.add(inputInvalidClass);
@@ -142,7 +141,7 @@ import Tooltip from 'tooltip.js';
           return isItemValid;
         });
 
-        if (!formValid) e.preventDefault();
+        if (!isFormValid) e.preventDefault();
       });
     },
   );
