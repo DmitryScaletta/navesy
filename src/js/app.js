@@ -152,8 +152,10 @@ import Tooltip from 'tooltip.js';
 (() => {
   const showMoreButton = document.querySelector('.js-show-more');
   const itemsContainer = document.querySelector('.js-canopy-types');
+  if (showMoreButton === null || itemsContainer === null) return;
+
   const items = itemsContainer.querySelectorAll('.image-card');
-  if (showMoreButton === null || itemsContainer === null || items.length === 0) return;
+  if (items.length === 0) return;
 
   const setItemsVisibility = visible => Array.prototype.forEach.call(items, (item, index) => {
     if (index > 5) item.setAttribute('aria-hidden', !visible);
