@@ -146,3 +146,29 @@ import Tooltip from 'tooltip.js';
     },
   );
 })();
+
+
+// show more button
+(() => {
+  const showMoreButton = document.querySelector('.js-show-more');
+  const itemsContainer = document.querySelector('.js-canopy-types');
+  const items = itemsContainer.querySelectorAll('.image-card');
+  if (showMoreButton === null || itemsContainer === null || items.length === 0) return;
+
+  const setItemsVisibility = (visible) => Array.prototype.forEach.call(items, (item, index) => {
+    if (index > 5) item.setAttribute('aria-hidden', !visible);
+  });
+
+  setItemsVisibility(false);
+
+  const buttonLabelExpand = 'Посмотреть ещё';
+  const buttonLabelHide   = 'Скрыть';
+
+  showMoreButton.addEventListener('click', (e) => {
+    const isExpanded = itemsContainer.getAttribute('data-expanded') === 'true' ? true : false;
+    itemsContainer.setAttribute('data-expanded', !isExpanded);
+    showMoreButton.textContent = !isExpanded ? buttonLabelHide : buttonLabelExpand;
+    setItemsVisibility(!isExpanded);
+    e.preventDefault();
+  });
+})();
