@@ -155,7 +155,7 @@ import Tooltip from 'tooltip.js';
   const items = itemsContainer.querySelectorAll('.image-card');
   if (showMoreButton === null || itemsContainer === null || items.length === 0) return;
 
-  const setItemsVisibility = (visible) => Array.prototype.forEach.call(items, (item, index) => {
+  const setItemsVisibility = visible => Array.prototype.forEach.call(items, (item, index) => {
     if (index > 5) item.setAttribute('aria-hidden', !visible);
   });
 
@@ -165,7 +165,7 @@ import Tooltip from 'tooltip.js';
   const buttonLabelHide   = 'Скрыть';
 
   showMoreButton.addEventListener('click', (e) => {
-    const isExpanded = itemsContainer.getAttribute('data-expanded') === 'true' ? true : false;
+    const isExpanded = itemsContainer.getAttribute('data-expanded') === 'true';
     itemsContainer.setAttribute('data-expanded', !isExpanded);
     showMoreButton.textContent = !isExpanded ? buttonLabelHide : buttonLabelExpand;
     setItemsVisibility(!isExpanded);
@@ -182,7 +182,7 @@ import Tooltip from 'tooltip.js';
   floatingButton.setAttribute('aria-hidden', true);
 
   window.addEventListener('scroll', () => {
-    const isHidden = (document.body.scrollTop > 250) ? false : true;
+    const isHidden = window.pageYOffset < 250;
     floatingButton.setAttribute('aria-hidden', isHidden);
   });
 })();
