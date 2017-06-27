@@ -242,21 +242,23 @@
   position: relative;
   margin: 0 auto;
   max-width: 480px;
+  overflow: hidden;
+  // visibility: hidden;
 
   &__list {
-    margin: 0 auto;
-    padding: 0 35px;
+    margin: 0;
     min-width: 250px;
+    overflow: hidden;
+    position: relative;
   }
 
   &__item {
-    display: none;
-    margin: 0 auto;
+    padding: 0 35px;
+    width: 100%;
     max-width: 100%;
-
-    &.active {
-      display: block;
-    }
+    float: left;
+    position: relative;
+    overflow: hidden;
   }
 
   &__next,

@@ -94,6 +94,22 @@ import Tooltip from 'tooltip.js';
 })();
 
 
+// portfolit mobile slider
+(() => {
+  const sliderContainer = document.querySelector('.mobile-slider-portfolio');
+  if (sliderContainer === null) return;
+
+  const slider = new Swipe(sliderContainer, { draggable: true });
+
+  const prevButton = sliderContainer.querySelector('.js-prev');
+  const nextButton = sliderContainer.querySelector('.js-next');
+  if (prevButton === null || nextButton === null) return;
+
+  prevButton.addEventListener('click', () => slider.prev());
+  nextButton.addEventListener('click', () => slider.next());
+})();
+
+
 // moveTo
 (() => {
   const moveTo = new MoveTo();
