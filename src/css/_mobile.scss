@@ -233,6 +233,59 @@
   }
 }
 
+.mobile-canopies-slider {
+  position: relative;
+  overflow: hidden;
+  // visibility: hidden;
+
+  &__list {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__item {
+    float: left;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    font-size: 0;
+
+    &:first-child .mobile-canopies-slider__desc::before,
+    &:last-child .mobile-canopies-slider__desc::after {
+      content: "";
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+
+  &__desc {
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+
+    &::before,
+    &::after {
+      @extend .icon;
+
+      padding: 0 15px;
+      font-weight: bold;
+      font-size: 18px;
+      color: $color-primary;
+    }
+
+    &::before {
+      content: $icon-angle-left;
+    }
+
+    &::after {
+      content: $icon-angle-right;
+    }
+  }
+}
+
 .mobile-portfolio {
   padding-bottom: 30px;
   background: linear-gradient(to right, $color-secondary, $color-secondary-light);

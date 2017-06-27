@@ -100,19 +100,25 @@ import Tooltip from 'tooltip.js';
 })();
 
 
-// mobile portfolio slider
+// mobile portfolio slider and mobile canopies slider
 (() => {
-  const sliderContainer = document.querySelector('.mobile-slider-portfolio');
-  if (sliderContainer === null) return;
+  const sliders = [
+    document.querySelector('.mobile-slider-portfolio'),
+    document.querySelector('.mobile-canopies-slider'),
+  ];
 
-  const slider = new Swipe(sliderContainer, { draggable: true });
+  sliders.forEach((sliderContainer) => {
+    if (sliderContainer === null) return;
 
-  const prevButton = sliderContainer.querySelector('.js-prev');
-  const nextButton = sliderContainer.querySelector('.js-next');
-  if (prevButton === null || nextButton === null) return;
+    const slider = new Swipe(sliderContainer, { draggable: true });
 
-  prevButton.addEventListener('click', () => slider.prev());
-  nextButton.addEventListener('click', () => slider.next());
+    const prevButton = sliderContainer.querySelector('.js-prev');
+    const nextButton = sliderContainer.querySelector('.js-next');
+    if (prevButton === null || nextButton === null) return;
+
+    prevButton.addEventListener('click', () => slider.prev());
+    nextButton.addEventListener('click', () => slider.next());
+  });
 })();
 
 
