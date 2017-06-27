@@ -1,0 +1,340 @@
+doctype html
+html(lang='ru')
+  head
+    title Навесы
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(rel='stylesheet', href='css/style.css')
+    link(rel='apple-touch-icon', sizes='180x180', href='/apple-touch-icon.png')
+    link(rel='icon', type='image/png', sizes='32x32', href='/favicon-32x32.png')
+    link(rel='icon', type='image/png', sizes='16x16', href='/favicon-16x16.png')
+    link(rel='shortcut icon', href='favicon.ico', type='image/x-icon')
+  body
+
+    header#header.section-header
+      .section-header__inner
+        .section-header__top
+          .section-header__email
+            a.section-header__email-link(href='mailto:info@navesykrd.ru') info@navesykrd.ru
+          .section-header__logo
+            .header-logo
+              span.upper Лидеры<br> по строительству навесов в ЮФО
+          .section-header__contacts
+            a.section-header__phone-number(href='tel:+79895698534') + 7 (989) 569-85-34
+            br
+            span Без выходных и праздничных дней
+            .section-header__button-wrapper
+              a.button.button--secondary.button--icon-phone.js-popup-toggle(href='#') Обратный звонок
+        h1.section-header__title Изготовление и монтаж навесов
+        span.section-header__subtitle любой сложности под ключ в Краснодаре и Краснодарском крае
+        .section-header__bottom
+          .section-header__form
+            .order-form.order-form--ruller.order-form--transparent
+              form.js-order-form(action='#')
+                .order-form__text
+                  | Позовите нас на замер
+                  span.order-form__highlighted-text это Бесплатно!
+                .order-form__input-group.order-form__input-group--user
+                  input.order-form__input(type='text', name='name', placeholder='Введите ваше имя')
+                .order-form__input-group.order-form__input-group--phone
+                  input.order-form__input(type='text', name='phone', placeholder='Введите ваш телефон')
+                button.order-form__button.button.button--primary.button--no-shadow.button--icon-paper Отправить заявку
+          .section-header__caption
+            .caption.caption--header
+              h3.caption__title Акция!
+              span.caption__text
+                | При заказе 90 м<sup>2</sup> навеса система слива 
+                span.upper в подарок
+                | !
+
+    section.section-steps
+      h2.section-steps__title 3 шага до красивого и долговечного навеса
+      section.section-step
+        header.section-step__header
+          h3.section-step__title
+            span.section-step__number 1
+            | Вы выбираете форму
+        .section.section-step__content
+          .section-step__row.js-canopy-types
+            - var types = ['Арочная', 'Полуарочная', 'Односкатная'];
+            each row in [...Array(4)]
+              each name in types
+                figure.card.image-card
+                  img.image-card__image(src='img/media/canopy-type-1.jpg', alt='')
+                  figcaption.image-card__desc= name
+          .section-step__button-wrapper
+            a.button.button--secondary.button--dark.js-show-more Посмотреть ещё
+      section.section-step
+        header.section-step__header
+          h3.section-step__title
+            span.section-step__number 2
+            | Вы выбираете материал и цвет
+        .section.section-step__content
+          .section-step__row
+            .section-step__select
+              h4.section-step__select-title Поликарбонат
+              .section-step__list
+                each item, index in [...Array(6)]
+                  img.section-step__item(src='img/media/polycarbonate-' + (index + 1) + '.png', alt='')
+            .section-step__select
+              h4.section-step__select-title Профнастил
+              .section-step__list
+                each item, index in [...Array(6)]
+                  img.section-step__item(src='img/media/decking-' + (index + 1) + '.png', alt='')
+      section.section-step
+        header.section-step__header
+          h3.section-step__title
+            span.section-step__number 3
+            | Мы осуществляем монтаж навеса
+        .section.section-step__content
+          .section-step__row
+            each item, index in [...Array(3)]
+              .card
+                figure.image-card
+                  img.image-card__image(src='img/media/mounting-' + (index + 1) + '.jpg', alt='')
+
+    section.section-promo.section-promo--promo-1
+      .section-promo__inner
+        .section-promo__content
+          .section-promo__box
+            .caption Долговечный навес из качественных материалов
+            .section-promo__button-wrapper
+              a.button.button--primary.js-popup-toggle(href='#') Заказать сейчас
+
+    section.section.section-quality
+      .section__inner
+        .section-quality__content
+          .section-quality__caption
+            | Мы используем<br> только качественные материалы
+          .section-quality__images
+            img.section-quality__image(src='img/partner-novattro.png', alt='')
+            img.section-quality__image(src='img/partner-plazit-polygal.png', alt='')
+            img.section-quality__image(src='img/partner-safplast.png', alt='')
+
+    section.section.section-portfolio
+      .section__inner
+        h2.section__title.section__title--light Наши работы
+        .slider-portfolio
+          .slider-portfolio__list
+            span.slider-portfolio__prev.js-prev
+            span.slider-portfolio__next.js-next
+            .slider-portfolio__item.js-slide.active
+              img(src='img/media/portfolio/slide-01.jpg', alt='')
+            .slider-portfolio__item.js-slide.next
+              img(src='img/media/portfolio/slide-02.jpg', alt='')
+            .slider-portfolio__item.js-slide
+              img(src='img/media/portfolio/slide-03.jpg', alt='')
+            .slider-portfolio__item.js-slide
+              img(src='img/media/portfolio/slide-04.jpg', alt='')
+            .slider-portfolio__item.js-slide
+              img(src='img/media/portfolio/slide-05.jpg', alt='')
+            .slider-portfolio__item.js-slide
+              img(src='img/media/portfolio/slide-06.jpg', alt='')
+            .slider-portfolio__item.js-slide
+              img(src='img/media/portfolio/slide-07.jpg', alt='')
+            .slider-portfolio__item.js-slide
+              img(src='img/media/portfolio/slide-08.jpg', alt='')
+            .slider-portfolio__item.js-slide
+              img(src='img/media/portfolio/slide-09.jpg', alt='')
+            .slider-portfolio__item.js-slide.prev
+              img(src='img/media/portfolio/slide-10.jpg', alt='')
+          .slider-portfolio__controls
+            .slider-portfolio__thumb.js-dot.active
+              img(src='img/media/portfolio/slide-01-thumb.jpg', alt='')
+            .slider-portfolio__thumb.js-dot
+              img(src='img/media/portfolio/slide-02-thumb.jpg', alt='')
+            .slider-portfolio__thumb.js-dot
+              img(src='img/media/portfolio/slide-03-thumb.jpg', alt='')
+            .slider-portfolio__thumb.js-dot
+              img(src='img/media/portfolio/slide-04-thumb.jpg', alt='')
+            .slider-portfolio__thumb.js-dot
+              img(src='img/media/portfolio/slide-05-thumb.jpg', alt='')
+            .slider-portfolio__thumb.js-dot
+              img(src='img/media/portfolio/slide-06-thumb.jpg', alt='')
+            .slider-portfolio__thumb.js-dot
+              img(src='img/media/portfolio/slide-07-thumb.jpg', alt='')
+            .slider-portfolio__thumb.js-dot
+              img(src='img/media/portfolio/slide-08-thumb.jpg', alt='')
+            .slider-portfolio__thumb.js-dot
+              img(src='img/media/portfolio/slide-09-thumb.jpg', alt='')
+            .slider-portfolio__thumb.js-dot
+              img(src='img/media/portfolio/slide-10-thumb.jpg', alt='')
+
+    section.section.section-building
+      .section__inner
+        h2.section__title Этапы строительства навеса
+        .section-building__content
+          .building-step
+            .building-step__header
+              .building-step__circle
+                img.building-step__image(src='img/media/building-step-1.jpg', alt='')
+              .building-step__title Подготовительный
+            .building-step__content
+              ul
+                li Обследование объекта
+                li Разработка и согласование эскиза
+                li Заключение договора и предоплата
+          .building-step
+            .building-step__header
+              .building-step__circle
+                img.building-step__image(src='img/media/building-step-2.jpg', alt='')
+              .building-step__title Основной
+            .building-step__content
+              ul
+                li Закупка необходимого материала
+                li Сборка ферм и других заготовок
+                li Зачистка швов
+                li Покраска и монтаж металлоконструкции, водосточной системы
+                li Монтаж профнастила или поликарбоната
+          .building-step
+            .building-step__header
+              .building-step__circle
+                img.building-step__image(src='img/media/building-step-3.jpg', alt='')
+              .building-step__title Завершающий
+            .building-step__content
+              ul
+                li Уборка на объекте
+                li Расчет за работу
+
+    section.section-promo.section-promo--promo-2
+      .section-promo__inner
+        .section-promo__content
+          .section-promo__box
+            .caption
+              | Пенсионерам и ветеранам
+              span.caption__text-big скидка
+              span.caption__text-bigger 15%
+            .section-promo__button-wrapper
+              a.button.button--primary.button--icon-warning.js-popup-toggle(href='#') Хочу скидку
+
+    section.section.section-reviews
+      .section-reviews__inner
+        h2.section__title.section__title--light Отзывы
+        .slider-reviews
+          .slider-reviews__slides
+            -
+              var reviews = [
+                {
+                  name: 'Ангелина',
+                  city: 'г.Краснодар',
+                  avatar: 'avatar-1.jpg',
+                  text: 'Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще и водостоки в подарок сделали!',
+                },
+                {
+                  name: 'Поликарп',
+                  city: 'г.Абинск',
+                  avatar: 'avatar-2.jpg',
+                  text: 'Предложили отличный вариант по приемлемой цене. Грамотный проект предоставили, в срок установили навес! Качество отличное, еще в водостоки в подарок сделали!Фирмой остались довольны на все 100! Бюджет у нас был немного ограничен, подумали-"повертели" и уместились в ту сумму, которой мы располагали.',
+                },
+              ];
+            each slide, index in [...Array(3)]
+              .slider-reviews__slide
+                -
+                  var items = (index % 2 === 0)
+                    ? [reviews[0], reviews[1], reviews[0]]
+                    : [reviews[1], reviews[0], reviews[1]];
+                each review in items
+                  .slider-reviews__item
+                    .review-item
+                      .review-item__circle
+                        img.review-item__image(src='img/media/' + review.avatar, alt='')
+                      .review-item__desc
+                        .review-item__user
+                          span.review-item__name #{review.name},
+                          span.review-item__city= review.city
+                        .review-item__text= review.text
+
+          .slider-reviews__controls.js-slider-dots
+            span.slider-reviews__dot.active
+            span.slider-reviews__dot
+            span.slider-reviews__dot
+
+    section.section.section-features
+      .section__inner
+        h2.section__title.section__title--light Мы несём ответственность и даём гарантии
+        .section-features__content
+          -
+            var features = [
+              {
+                name: 'На конструкцию',
+                duration: 'до 7 лет',
+                image: 'feature-1.svg',
+              },
+              {
+                name: 'На покрытие',
+                duration: 'до 3 лет',
+                image: 'feature-2.svg',
+              },
+              {
+                name: 'На поликарбонат',
+                duration: 'до 15 лет',
+                image: 'feature-3.svg',
+              },
+              {
+                name: 'На профнастил',
+                duration: 'до 50 лет',
+                image: 'feature-4.svg',
+              },
+            ];
+          each feature in features
+            figure.card-feature
+              .card-feature__circle
+                img.card-feature__image(src='img/' + feature.image, alt='')
+              figcaption.card-feature__text
+                | #{feature.name}
+                span.card-feature__text-big= feature.duration
+
+    section.section.section-clients
+      .section__inner
+        h2.section__title Наши крупные клиенты
+        .section-clients__content
+          .section-clients__list
+            img.section-clients__image(src='img/client-gazprom.png', alt='')
+            img.section-clients__image(src='img/client-msk.png', alt='')
+            img.section-clients__image(src='img/client-ask.png', alt='')
+
+    section.section-promo.section-promo--promo-3
+      .section-promo__inner
+        .section-promo__content
+          .section-promo__box
+            .caption
+              span.caption__text-big А ты хочешь стать нашим клиентом?
+            .section-promo__button-wrapper
+              a.button.button--primary.button--icon-warning.js-popup-toggle(href='#') Хочу конечно!
+
+    footer.section-footer
+      a.section-footer__top-link.js-move-to(href='#header')
+      .section-footer__inner
+        .section-footer__content
+          .section-footer__text
+            | Более 
+            span.section-footer__text-highlighted 500
+            |  навесов за 
+            span.section-footer__text-highlighted 15
+            |  лет!
+          .section-footer__info
+            .section-footer__contacts
+              a.section-footer__phone(href='tel:+79895698534') + 7 (989) 569-85-34
+              br
+              a.section-footer__link(href='mailto:info@navesykrd.ru') info@navesykrd.ru
+            .section-footer__copyright
+              .section-footer__copyright-text Copyright © «Навесы Крд», 2017. Все права защищены
+              a.section-footer__copyright-logo(href='//art6.ru')
+
+    .popup.js-popup
+      .popup__form.order-form.order-form--keyboard
+        .popup__close.js-popup-toggle
+        form.js-order-form(action='#')
+          .order-form__text
+            span.order-form__highlighted-text заполните заявку
+            |           и мы свяжемся с вами
+          .order-form__input-group.order-form__input-group--user
+            input.order-form__input(type='text', name='name', placeholder='Введите ваше имя')
+          .order-form__input-group.order-form__input-group--phone
+            input.order-form__input(type='text', name='phone', placeholder='Введите ваш телефон')
+          button.order-form__button.button.button--primary.button--no-shadow.button--icon-paper Отправить заявку
+
+    a.floating-button.js-floating-button.js-popup-toggle
+
+    script(src='js/app.js')
