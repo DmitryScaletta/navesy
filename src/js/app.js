@@ -3,24 +3,18 @@ import MoveTo from 'moveto';
 import Tooltip from 'tooltip.js';
 
 
-// popup
+// floating button
 (() => {
-  const popup = document.querySelector('.js-popup');
-  if (popup === null) return;
+  const floatingButton = document.querySelector('.js-floating-button');
+  if (floatingButton === null) return;
 
-  const togglePopup = () => popup.classList.toggle('js-popup-visible');
+  const handleFloatingButton = () => {
+    const isHidden = window.pageYOffset < 250;
+    floatingButton.setAttribute('aria-hidden', isHidden);
+  };
 
-  window.addEventListener('click', (e) => {
-    if (e.target === popup) togglePopup();
-  });
-
-  Array.prototype.forEach.call(
-    document.querySelectorAll('.js-popup-toggle'),
-    elem => elem.addEventListener('click', (e) => {
-      togglePopup();
-      e.preventDefault();
-    }),
-  );
+  window.addEventListener('load',   handleFloatingButton);
+  window.addEventListener('scroll', handleFloatingButton);
 })();
 
 
@@ -202,16 +196,22 @@ import Tooltip from 'tooltip.js';
 })();
 
 
-// floating button
+// popup
 (() => {
-  const floatingButton = document.querySelector('.js-floating-button');
-  if (floatingButton === null) return;
+  const popup = document.querySelector('.js-popup');
+  if (popup === null) return;
 
-  const handleFloatingButton = () => {
-    const isHidden = window.pageYOffset < 250;
-    floatingButton.setAttribute('aria-hidden', isHidden);
-  };
+  const togglePopup = () => popup.classList.toggle('js-popup-visible');
 
-  window.addEventListener('load',   handleFloatingButton);
-  window.addEventListener('scroll', handleFloatingButton);
+  window.addEventListener('click', (e) => {
+    if (e.target === popup) togglePopup();
+  });
+
+  Array.prototype.forEach.call(
+    document.querySelectorAll('.js-popup-toggle'),
+    elem => elem.addEventListener('click', (e) => {
+      togglePopup();
+      e.preventDefault();
+    }),
+  );
 })();
