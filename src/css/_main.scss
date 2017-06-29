@@ -773,8 +773,7 @@
 
   &__slide {
     display: flex;
-    padding: 0 ($grid-gutter-width-base / 2);
-    justify-content: space-between;
+    justify-content: space-around;
     float: left;
     width: 100%;
     position: relative;
